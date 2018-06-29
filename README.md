@@ -57,7 +57,7 @@ Add **webhook** scripts to your webserver and check required packages are instal
 
 ### STEP 3
 
-Replace **CLASSMARKER_WEBHOOK_SECRET** with your Webhook Secret from your Webhooks page in ClassMarKer
+Replace **CLASSMARKER_WEBHOOK_SECRET** with your Webhook Secret from your Webhooks page in ClassMarker
 
 
 ### STEP 4
