@@ -18,7 +18,7 @@ https://www.classmarker.com/online-testing/api/webhooks/
 # Testing Webhooks  
 
 **Note:** You must add your unique SECRET PHRASE which you are given when you create your Webhook in ClassMarker.
-**See:** 'ClassmarkerWebhookSecret' in the **app.js** script.
+**See:** 'secret' in the **app.js** script.
 
 You can test your Webhook script is working by sending sample Webhooks to your endpoint URL from your Edit Webhooks page in ClassMarker.
 
