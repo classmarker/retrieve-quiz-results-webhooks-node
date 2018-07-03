@@ -17,10 +17,10 @@ https://www.classmarker.com/online-testing/api/webhooks/
 
 # Testing Webhooks  
 
-**First:** You must add your unique SECRET PHRASE which you are given when you create your Webhook in ClassMarker.
-**See:** 'CLASSMARKER_WEBHOOK_SECRET_PHRASE' in this script.
+**Note:** You must add your unique SECRET PHRASE which you are given when you create your Webhook in ClassMarker.
+**See:** 'ClassmarkerWebhookSecret' in the **app.js** script.
 
-You can test your Webhook script is working by sending sample Webhooks to your endpoint URL from your Webhooks page in ClassMarker.
+You can test your Webhook script is working by sending sample Webhooks to your endpoint URL from your Edit Webhooks page in ClassMarker.
 
  #### *The difference between LIVE Webhooks and VERIFICATION Webhooks:*
 The **payload_status** element in the JSON body will read:
@@ -50,17 +50,24 @@ For testing locally, you create a secure URL to your localhost using: https://ng
  * *classmarker_link_results:*  	for link results (holds test results taken from Direct links)
 
 
-### STEP 2
+### STEP 2 - Using Docker on Localhost
 
-Add **webhook** scripts to your webserver and check required packages are installed
+- Create a new Webhook in ClassMarker under the My account / Webhooks page.
+- Set Endpoint Url: 'http://localhost' (we'll change this later)
+- Then click 'Save Webhook Settings'
+- Click 'View Webhook secret phase'
+- Copy your secret phrase to the **secret** variable in **app.js** file
+- Build the docker image via 'docker build -t classmarkerjsexample .'
+- Run the docker image via 'docker run -p 8080:8080 classmarkerjsexample'
+- Use ngrok to tunnel verification Webhooks from ClassMarker to your localhost
+- Run ngrok to open publicly accessible port to your classmarkergoexample webserver via './ngrok http 8080' which will give you a http and a https url.
+- On your Edit Webhooks page in ClassMarker, Update the Endpoint URL: set to '[HTTPS URL FROM NGROK]/webhook'
+- Select the checkbox 'Verify on Save'.
+- Then click 'Save webhook settings' to test.
+- You should see the message 'HTTP RESPONSE STATUS CODE: 200'.
 
 
 ### STEP 3
-
-Replace **CLASSMARKER_WEBHOOK_SECRET** with your Webhook Secret from your Webhooks page in ClassMarker
-
-
-### STEP 4
 Recommended to log webhooks to a local file to see you are receiving webhooks OK.
 
 
