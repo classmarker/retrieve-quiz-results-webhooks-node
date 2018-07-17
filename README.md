@@ -6,7 +6,7 @@ ClassMarker is a secure online Quiz Maker platform for Business and Education fo
 
 Our WEBHOOKS allow you to receive Quiz results in real time using Node.
 
-# How to Create a Webhook to receive Quiz results
+# How to Create a Webhook to receive Quiz results in Node
 https://www.classmarker.com/online-testing/manual/#api_webhooks
 
 # Developer Documentation
@@ -60,7 +60,7 @@ For testing locally, you create a secure URL to your localhost using: https://ng
 - Build the docker image via 'docker build -t classmarkerjsexample .'
 - Run the docker image via 'docker run -p 8080:8080 classmarkerjsexample'
 - Use ngrok to tunnel verification Webhooks from ClassMarker to your localhost
-- Run ngrok to open publicly accessible port to your classmarkergoexample webserver via './ngrok http 8080' which will give you a http and a https url.
+- Run ngrok to open publicly accessible port to your classmarkerjsexample webserver via './ngrok http 8080' which will give you a http and a https url.
 - On your Edit Webhooks page in ClassMarker, Update the Endpoint URL: set to '[HTTPS URL FROM NGROK]/webhook'
 - Select the checkbox 'Verify on Save'.
 - Then click 'Save webhook settings' to test.
